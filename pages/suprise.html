@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+  <title>Suprise</title>
+  <style>
+    body {
+     background-image: url(../images/heartbackground.jpg);
+     background-repeat: no-repeat;
+    background-size: cover;
+     margin: 0;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     min-height: 100vh;
+     background-color: #f0f0f0;
+   }
+
+ </style>
+</head>
+<body>
+  <a class="back" href="../index.html">Back</a>
+  <div class="suprise-container">
+    <div class="photous">
+      <video autoplay muted loop>
+        <source src="../images/us/video.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="buttons">
+      <div class="icon-buttons">
+        <img class="imgb" src="../images/previous.png" alt="">
+      </div>  
+      <div class="icon-buttons hitplay">
+        <img class="imgb" src="../images/play-button.png" alt="">
+      </div>
+      <div class="icon-buttons">
+        <img class="imgb" src="../images/forward-button.png" alt="">
+      </div>
+    </div>
+  </div>
+  <audio id="music" src="../audio/music.mp3" loop></audio>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Get the audio element
+      var audio = document.getElementById('music');
+
+      // Find all elements with the class 'hitplay'
+      var hitplayButtons = document.querySelectorAll('.hitplay');
+
+      // Add click event listeners to each 'hitplay' button
+      hitplayButtons.forEach(function (button) {
+        button.addEventListener('click', function () {
+          // Check if the audio is paused
+          if (audio.paused) {
+            // If paused, play the audio
+            audio.play();
+          } else {
+            // If playing, pause the audio
+            audio.pause();
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
